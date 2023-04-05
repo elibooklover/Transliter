@@ -1,8 +1,8 @@
-# Translit
+# TransLit
 
-This tool transliterates multilingual text to English. | by Hoyeol Kim
+TransLit transliterates multilingual text to English. | by Hoyeol Kim
 
-Currently, this tool supports Korean and Japanese. Japanese Kanji is not supported yet. More languages will be added to Translit.
+Currently, TransLit supports Korean and Japanese. Japanese Kanji is not supported yet. More languages will be added to TransLit.
 
 ---
 
@@ -25,6 +25,6 @@ douitashimashite。
 
 ```
 
-To exit Translit, please press ctrl+c.
+To exit TransLit, please press ctrl+c.
 
 ---
