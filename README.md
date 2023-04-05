@@ -1,20 +1,30 @@
-# TranslitKo
+# Translit
 
-This tool converts Korean text to English using transliteration. | by Hoyeol Kim
+This tool transliterates multilingual text to English. | by Hoyeol Kim
+
+Currently, this tool supports Korean and Japanese. Japanese Kanji is not supported yet. More languages will be added to Translit.
 
 ---
 
-Here is an example to use TranslitKo:
+Here is an example to use Translit:
 
 ```
-$ python translitko.py
-> Please enter the Korean text: 안녕하세요. 날씨가 좋네요!
+$ python translit_ko.py
+> Please enter Korean text: 안녕하세요. 날씨가 좋네요!
 annyeohaseyo. narssiga johneyo!
 
-> Please enter the Korean text: 우리나라 만세!
+> Please enter Korean text: 우리나라 만세!
 urinara manse!
+
+$ python translit_jp.py
+> Please enter Japanese text: おねがいします。
+onegaishimasu。
+
+> Please enter Japanese text: どういたしまして。
+douitashimashite。
+
 ```
 
-To exit TranslitKo, please press ctrl+c.
+To exit Translit, please press ctrl+c.
 
 ---
