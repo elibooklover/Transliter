@@ -1,15 +1,15 @@
-# TransLit
+# TransLiter
 
-TransLit transliterates multilingual text to English. | by Hoyeol Kim
+TransLiter transliterates multilingual text to English. | by Hoyeol Kim
 
-Currently, TransLit supports Korean and Japanese. More languages will be added to TransLit.
+Currently, TransLiter supports Korean and Japanese. More languages will be added to TransLiter.
 
 ---
 
 ### Setup
 
 ```
-$ git clone https://github.com/elibooklover/Translit.git
+$ git clone https://github.com/elibooklover/TransLiter.git
 
 $ pip install -r requirements.txt
 ```
@@ -17,7 +17,7 @@ $ pip install -r requirements.txt
 ### 1. Korean
 
 ```
-$ python translit_ko.py
+$ python transliter_ko.py
 
 > Please enter Korean text: 안녕하세요. 날씨가 좋네요!
 annyeohaseyo. narssiga johneyo!
@@ -26,12 +26,12 @@ annyeohaseyo. narssiga johneyo!
 urinara manse!
 ```
 
-To exit TransLit, please press ctrl+c.
+To exit TransLiter, please press ctrl+c.
 
 ### 2. Japanese
 
 ```
-$ python translit_jp.py
+$ python transliter_jp.py
 
 > Please enter Japanese text: おねがいします。
 onegaishimasu。
@@ -43,6 +43,6 @@ tenkigaiidesune。
 mainichiundouwoshimasu。
 ```
 
-To exit TransLit, please press ctrl+c.
+To exit TransLiter, please press ctrl+c.
 
 ---
