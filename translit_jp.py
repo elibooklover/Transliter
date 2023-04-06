@@ -1,12 +1,20 @@
 from jp_list import *
+import pykakasi
 
-def translit_jp(text):
-    hiragana_to_english.update(katakana_to_english)
+def kanji_to_hiragana(text):
     # if not isinstance(text, str):
     #     raise TypeError("Input text should be a string.")
     # if not all(token in list(hiragana_to_english) for token in text):
     #     raise ValueError("Input text is not Japanese.")
-     
+    
+    kakasi = pykakasi.kakasi()
+    kakasi.setMode("J", "H")
+    conv = kakasi.getConverter()
+    text = conv.do(text)
+    return text
+
+def translit_jp(text):
+    hiragana_to_english.update(katakana_to_english)
     transliterated_text = ""
     i = 0
     while i < len(text):
@@ -20,4 +28,5 @@ def translit_jp(text):
 
 while True:
     input_text = input("Please enter Japanese text: ")
-    print(translit_jp(input_text))
+    hiragana_text = kanji_to_hiragana(input_text)
+    print(translit_jp(hiragana_text))
