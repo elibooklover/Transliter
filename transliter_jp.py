@@ -2,17 +2,14 @@ from jp_list import *
 import pykakasi
 
 def kanji_to_hiragana(text):
-    # if not isinstance(text, str):
-    #     raise TypeError("Input text should be a string.")
-    # if not all(token in list(hiragana_to_english) for token in text):
-    #     raise ValueError("Input text is not Japanese.")
-    
-    kakasi = pykakasi.kakasi()
-    kakasi.setMode("J", "H")
-    # kakasi.setMode("s", True)
-    conv = kakasi.getConverter()
-    text = conv.do(text)
-    return text
+    kks = pykakasi.kakasi()
+    hiragana_text = ''
+    for result in kks.convert(text):
+        if result['hira']:
+            hiragana_text += result['hira']
+        else:
+            hiragana_text += result['orig']
+    return hiragana_text
 
 def translit_jp(text):
     hiragana_to_english.update(katakana_to_english)
