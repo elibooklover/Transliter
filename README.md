@@ -29,7 +29,7 @@ $ pip install -r requirements.txt
 annyeohaseyo. narssiga johneyo!
 ```
 
-If you want to use the transliteration in a row:
+If you want to use the transliteration function in a row:
 
 ```
 > from transliter_ko import *
@@ -53,7 +53,7 @@ To exit TransLiter, please press ctrl+c.
 tenkigaiidesune。
 ```
 
-If you want to use the transliteration in a row:
+If you want to use the transliteration function in a row:
 
 ```
 > from transliter_jp import *
