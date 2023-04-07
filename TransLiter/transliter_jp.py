@@ -1,4 +1,4 @@
-from jp_list import *
+from TransLiter.jp_list import *
 import pykakasi
 
 def kanji_to_hiragana(text):
