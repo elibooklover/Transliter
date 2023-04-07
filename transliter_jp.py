@@ -11,7 +11,8 @@ def kanji_to_hiragana(text):
             hiragana_text += result['orig']
     return hiragana_text
 
-def translit_jp(text):
+def jp(text):
+    text = kanji_to_hiragana(text)
     hiragana_to_english.update(katakana_to_english)
     transliterated_text = ""
     i = 0
@@ -27,7 +28,7 @@ def translit_jp(text):
         i += 1
     return transliterated_text
 
-while True:
-    input_text = input("Please enter Japanese text: ")
-    hiragana_text = kanji_to_hiragana(input_text)
-    print(translit_jp(hiragana_text))
+def transliter_jp():
+    while True:
+        input_text = input("Please enter Japanese text: ")
+        print(jp(input_text))

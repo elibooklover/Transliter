@@ -23,7 +23,17 @@ $ pip install -r requirements.txt
 ### 1. Korean
 
 ```
-$ python transliter_ko.py
+> from transliter_ko import *
+
+> ko("안녕하세요. 날씨가 좋네요!")
+annyeohaseyo. narssiga johneyo!
+```
+
+If you want to use the transliteration in a row:
+
+```
+> from transliter_ko import *
+> transliter_ko()
 
 > Please enter Korean text: 안녕하세요. 날씨가 좋네요!
 annyeohaseyo. narssiga johneyo!
@@ -37,7 +47,17 @@ To exit TransLiter, please press ctrl+c.
 ### 2. Japanese
 
 ```
-$ python transliter_jp.py
+> from transliter_jp import *
+
+> jp("天気がいいですね。")
+tenkigaiidesune。
+```
+
+If you want to use the transliteration in a row:
+
+```
+> from transliter_jp import *
+> transliter_jp()
 
 > Please enter Japanese text: おねがいします。
 onegaishimasu。

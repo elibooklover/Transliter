@@ -1,6 +1,7 @@
 from ko_jamo import *
 
-def translit_ko(text):
+def ko(text):
+    text = convert(text)
     syllables = list(text)
     transliterated_syllables = []
     for syllable in syllables:
@@ -14,7 +15,7 @@ def translit_ko(text):
     transliterated_word = ''.join(transliterated_syllables)
     return transliterated_word
 
-while True:
-    input_text = input("Please enter Korean text: ")
-    input_jamo = convert(input_text)
-    print(translit_ko(input_jamo))
+def transliter_ko():
+    while True:
+        input_text = input("Please enter Korean text: ")
+        print(ko(input_text))
