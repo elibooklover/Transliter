@@ -1,4 +1,4 @@
-from ko_jamo import *
+from TransLiter.ko_jamo import *
 
 def ko(text):
     text = convert(text)

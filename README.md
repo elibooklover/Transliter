@@ -12,18 +12,24 @@ Currently, TransLiter supports Korean and Japanese. More languages will be added
 
 ---
 
-### Setup
+### Install
 
 ```
-$ git clone https://github.com/elibooklover/TransLiter.git
+$ pip install TransLiter
+```
 
-$ pip install -r requirements.txt
+### Load TransLiter in Python
+
+```
+$ Python
+
+> import TransLiter
 ```
 
 ### 1. Korean
 
 ```
-> from transliter_ko import *
+> from TransLiter.transliter_ko import *
 
 > ko("안녕하세요. 날씨가 좋네요!")
 annyeohaseyo. narssiga johneyo!
@@ -32,7 +38,7 @@ annyeohaseyo. narssiga johneyo!
 If you want to use the transliteration function in a row:
 
 ```
-> from transliter_ko import *
+> from TransLiter.transliter_ko import *
 > transliter_ko()
 
 > Please enter Korean text: 안녕하세요. 날씨가 좋네요!
@@ -47,7 +53,7 @@ To exit TransLiter, please press ctrl+c.
 ### 2. Japanese
 
 ```
-> from transliter_jp import *
+> from TransLiter.transliter_jp import *
 
 > jp("天気がいいですね。")
 tenkigaiidesune。
@@ -56,7 +62,7 @@ tenkigaiidesune。
 If you want to use the transliteration function in a row:
 
 ```
-> from transliter_jp import *
+> from TransLiter.transliter_jp import *
 > transliter_jp()
 
 > Please enter Japanese text: おねがいします。
