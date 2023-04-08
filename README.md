@@ -23,23 +23,20 @@ $ pip install TransLiter
 ```
 $ Python
 
-> import TransLiter
+> import TransLiter as tl
 ```
 
 ### 1. Korean
 
 ```
-> from TransLiter.transliter_ko import *
-
-> ko("안녕하세요. 날씨가 좋네요!")
+> tl.ko("안녕하세요. 날씨가 좋네요!")
 annyeohaseyo. narssiga johneyo!
 ```
 
 If you want to use the transliteration function in a row:
 
 ```
-> from TransLiter.transliter_ko import *
-> transliter_ko()
+> tl.transliter_ko()
 
 > Please enter Korean text: 안녕하세요. 날씨가 좋네요!
 annyeohaseyo. narssiga johneyo!
@@ -53,17 +50,14 @@ To exit TransLiter, please press ctrl+c.
 ### 2. Japanese
 
 ```
-> from TransLiter.transliter_jp import *
-
-> jp("天気がいいですね。")
+> tl.jp("天気がいいですね。")
 tenkigaiidesune。
 ```
 
 If you want to use the transliteration function in a row:
 
 ```
-> from TransLiter.transliter_jp import *
-> transliter_jp()
+> tl.transliter_jp()
 
 > Please enter Japanese text: おねがいします。
 onegaishimasu。
