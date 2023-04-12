@@ -145,7 +145,7 @@ The output is saved as `output_jp.csv` in your current directory.
 
 ## 3. Spacing
 
-Some languages such as Japanese don't have spacing betweeon words. If there was spacing between characters or words for those language text, you would bump into errors. To avoid the errors, spacing needs to be removed.
+Some languages such as Japanese don't have spacing between words. If there was spacing between characters or words for those language text, you would bump into errors. To avoid the errors, spacing needs to be removed.
 
 ```
 > spacing("良 い ニ ュ ー ス で す。")
