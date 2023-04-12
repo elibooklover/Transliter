@@ -12,13 +12,13 @@ Currently, TransLiter supports Korean and Japanese. More languages will be added
 
 ---
 
-### Install
+## Install
 
 ```
 $ pip install TransLiter
 ```
 
-### Load TransLiter in Python
+## Load TransLiter in Python
 
 ```
 $ Python
@@ -26,9 +26,9 @@ $ Python
 > import TransLiter as tl
 ```
 
-### 1. Korean
+## 1. Korean
 
-##### 1-1. Simpe functions.
+### 1-1. Simpe functions.
 
 ```
 > tl.ko("안녕하세요. 날씨가 좋네요!")
@@ -49,7 +49,7 @@ urinara manse!
 
 To exit TransLiter, please press enter without any text.
 
-##### 1-2. File Export (txt -> txt)
+### 1-2. File Export (txt -> txt)
 
 The output will be saved as a txt file in the current directory.
 
@@ -68,7 +68,7 @@ haruharu jaemiissge sarayo.
 가족들과 저녁을 먹어요.gajogdeurgwa jeonyeogeur meogeoyo.
 ```
 
-##### 1-3. File Export (txt -> csv)
+### 1-3. File Export (txt -> csv)
 
 The output will be saved as a csv file in the current directory.
 
@@ -83,9 +83,9 @@ The output will be saved as a csv file in the current directory.
 5   가족들과 저녁을 먹어요.  gajogdeurgwa jeonyeogeur meogeoyo.
 ```
 
-### 2. Japanese
+## 2. Japanese
 
-##### 2-1. Simple functions
+### 2-1. Simple functions
 
 ```
 > tl.jp("天気がいいですね。")
@@ -109,7 +109,7 @@ mainichiundouwoshimasu。
 
 To exit TransLiter, please press enter without any text.
 
-##### 2-2. File Export (txt -> txt)
+### 2-2. File Export (txt -> txt)
 
 The output will be saved as a txt file in the current directory.
 
@@ -128,7 +128,7 @@ kiwotsuketekudasai。
 それはいい考えですね。sorehaiikangaedesune。
 ```
 
-##### 2-3. File Export (txt -> csv)
+### 2-3. File Export (txt -> csv)
 
 The output will be saved as a csv file in the current directory.
 
