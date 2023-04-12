@@ -5,18 +5,19 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(name='TransLiter',
     python_requires='>=3.6',
-    version='0.1.2',
+    version='0.2.0',
     url='https://github.com/elibooklover/TransLiter',
     license='MIT',
     author='Hoyeol Kim',
     author_email='elibooklover@gmail.com',
-    description='TransLiter transliterates multilingual text to English.',
+    description='TransLiter transliterates multilingual text into English.',
     packages=['TransLiter', ],
     long_description=long_description,
     long_description_content_type="text/markdown",
     zip_safe=False,
     include_package_data=True,
     install_requires=[
+        "pandas",
         "pykakasi"
     ]
 )
