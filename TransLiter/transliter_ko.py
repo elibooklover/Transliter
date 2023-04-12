@@ -45,7 +45,7 @@ def transliter_ko():
 
 def txt_ko(file):
     f = open(file, 'r')
-    f2 = open("output_kr.txt", 'w')
+    f2 = open("output_ko.txt", 'w')
     result = ""
     while True:
         line = f.readline()

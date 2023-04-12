@@ -51,7 +51,7 @@ To exit TransLiter, please press enter without any text.
 
 ### 1-2. File Export (txt -> txt)
 
-The output will be saved as a txt file in the current directory.
+The output is saved as `output_ko.txt` in your current directory.
 
 ```
 > tl.txt_ko("test_ko.txt")
@@ -70,7 +70,7 @@ haruharu jaemiissge sarayo.
 
 ### 1-3. File Export (txt -> csv)
 
-The output will be saved as a csv file in the current directory.
+The output is saved as `output_ko.csv` in your current directory.
 
 ```
 > tl.csv_ko("test_ko.txt")
@@ -111,7 +111,7 @@ To exit TransLiter, please press enter without any text.
 
 ### 2-2. File Export (txt -> txt)
 
-The output will be saved as a txt file in the current directory.
+The output is saved as `output_jp.txt` in your current directory.
 
 ```
 > tl.txt_jp("test_jp.txt")
@@ -130,7 +130,7 @@ kiwotsuketekudasai。
 
 ### 2-3. File Export (txt -> csv)
 
-The output will be saved as a csv file in the current directory.
+The output is saved as `output_jp.csv` in your current directory.
 
 ```
 >>> tl.csv_jp("test_jp.txt")
@@ -141,4 +141,19 @@ The output will be saved as a csv file in the current directory.
 3      おねがいします。         onegaishimasu。
 4    気をつけてください。    kiwotsuketekudasai。
 5   それはいい考えですね。  sorehaiikangaedesune。
+```
+
+## 3. Spacing
+
+Some langauges such as Japanese don't have spacing betweeon words. If there was spacing between characters or words for those language text, you would bump into errors. To avoid the errors, spacing needs to be removed.
+
+```
+> spacing("良 い ニ ュ ー ス で す。")
+良いニュースです。
+```
+
+If you want to remove all spacing from a file, use `spacing_file("filename")`. The result is saved as `spacing_removed.txt`.
+
+```
+> spacing_file("test.txt")
 ```
