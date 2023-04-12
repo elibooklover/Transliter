@@ -8,7 +8,7 @@
 
 TransLiter transliterates multilingual text into English. | by Hoyeol Kim
 
-Currently, TransLiter supports Korean and Japanese. More languages will be added to TransLiter.
+Currently, TransLiter supports Korean and Japanese. More languages will be added to TransLiter in the future.
 
 ---
 
@@ -35,7 +35,7 @@ $ Python
 annyeohaseyo. narssiga johneyo!
 ```
 
-If you want to use the transliteration function in a row:
+If you want to use the transliteration function several times in a row:
 
 ```
 > tl.transliter_ko()
@@ -92,7 +92,7 @@ The output is saved as `output_ko.csv` in your current directory.
 tenkigaiidesune。
 ```
 
-If you want to use the transliteration function in a row:
+If you want to use the transliteration function several times in a row:
 
 ```
 > tl.transliter_jp()
@@ -145,7 +145,7 @@ The output is saved as `output_jp.csv` in your current directory.
 
 ## 3. Spacing
 
-Some languages such as Japanese don't have spacing between words. If there was spacing between characters or words for those language text, you would bump into errors. To avoid the errors, spacing needs to be removed.
+Some languages such as Japanese don't have spacing between words. If there is spacing between the characters or words for text in those languages, you might bump into errors. To avoid the errors, the spacing needs to be removed.
 
 ```
 > spacing("良 い ニ ュ ー ス で す。")
