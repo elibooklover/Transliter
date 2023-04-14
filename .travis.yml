@@ -3,6 +3,7 @@ python:
   - "3.6"
 install:
   - pip install pytest-cov codecov
+  - pip install TransLiter
 script:
   - pytest --cov=TransLiter tests
 after_success:
