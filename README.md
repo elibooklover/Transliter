@@ -28,7 +28,7 @@ $ Python
 
 ## 1. Korean
 
-### 1-1. Simpe functions.
+### 1-1. Simple functions.
 
 ```
 > tl.ko("안녕하세요. 날씨가 좋네요!")
