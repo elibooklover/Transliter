@@ -133,7 +133,7 @@ kiwotsuketekudasai。
 The output is saved as `output_jp.csv` in your current directory.
 
 ```
->>> tl.csv_jp("test_jp.txt")
+> tl.csv_jp("test_jp.txt")
   Original Text    Transliterated Text
 0        気を付けて。           kiwotsukete。
 1     良いニュースです。         yoinyuーsudesu。
@@ -148,12 +148,12 @@ The output is saved as `output_jp.csv` in your current directory.
 Some languages such as Japanese don't have spacing between words. If there is spacing between the characters or words for text in those languages, you might bump into errors. To avoid the errors, the spacing needs to be removed.
 
 ```
-> spacing("良 い ニ ュ ー ス で す。")
+> tl.spacing("良 い ニ ュ ー ス で す。")
 良いニュースです。
 ```
 
 If you want to remove all spacing from a file, use `spacing_file("filename")`. The result is saved as `spacing_removed.txt`.
 
 ```
-> spacing_file("test.txt")
+> tl.spacing_file("test.txt")
 ```
