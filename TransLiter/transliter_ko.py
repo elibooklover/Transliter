@@ -72,6 +72,6 @@ def csv_ko(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_ko.csv")
+    data.to_csv("output_ko.csv", encoding="utf-8-sig")
     print(data)
     f.close()

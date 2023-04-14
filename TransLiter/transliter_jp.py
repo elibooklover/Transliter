@@ -68,6 +68,6 @@ def csv_jp(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_jp.csv")
+    data.to_csv("output_jp.csv", encoding="utf-8-sig")
     print(data)
     f.close()
