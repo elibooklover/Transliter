@@ -23,19 +23,31 @@ def convert(Ko_words):
 
 def ko(text):
     text = convert(text)
-    syllables = list(text)
-    transliterated_syllables = []
-    for syllable in syllables:
-        transliterated_syllable = ''
-        for letter in syllable:
-            if letter in KOREAN_ALPHABET:
-                transliterated_syllable += KOREAN_ALPHABET[letter]
+    letter = list(text)
+    transliterated_letters = []
+    for i in range(len(letter)-1):
+        transliterated_letter = ''
+        try:
+            if letter[i] in JONGSUNG_LIST2 and letter[i+1] in CHOSUNG_LIST2:
+                transliterated_letter += JONGSUNG_ALPHABET[letter[i]]
+            elif letter[i] in CHOSUNG_LIST or JUNGSUNG_LIST:
+                transliterated_letter += KOREAN_ALPHABET[letter[i]]
             else:
-                transliterated_syllable += letter
-        transliterated_syllables.append(transliterated_syllable)
-    transliterated_word = ''.join(transliterated_syllables)
+                transliterated_letter += letter[i]
+            transliterated_letters.append(transliterated_letter)
+        except KeyError:
+            transliterated_letter += letter[i]
+            transliterated_letters.append(transliterated_letter)
+    if len(letter) > 1:
+        if letter[-1] in JONGSUNG_LIST2:
+            transliterated_letters.append(JONGSUNG_ALPHABET[letter[-1]])
+        elif letter[-1] in JUNGSUNG_LIST:
+            transliterated_letters.append(KOREAN_ALPHABET[letter[-1]])
+        else:
+            transliterated_letters.append(letter[-1])
+    transliterated_word = ''.join(transliterated_letters)
     return transliterated_word
-
+        
 def transliter_ko():
     while True:
         input_text = input("Please enter Korean text: ")

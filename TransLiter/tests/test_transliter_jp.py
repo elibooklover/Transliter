@@ -1,5 +1,5 @@
 import pytest
-import TransLiter as tl
+from TransLiter.transliter_jp import *
 
 @pytest.mark.parametrize(
     "case, expected",
@@ -12,8 +12,8 @@ import TransLiter as tl
     ],
 )
 def test_kanji_to_hiragana(case, expected):
-    message = (f"returned {tl.kanji_to_hiragana(case)} instead of {expected}")
-    assert tl.kanji_to_hiragana(case) == expected, message
+    message = (f"returned {kanji_to_hiragana(case)} instead of {expected}")
+    assert kanji_to_hiragana(case) == expected, message
 
 @pytest.mark.parametrize(
     "case, expected",
@@ -28,5 +28,5 @@ def test_kanji_to_hiragana(case, expected):
     ],
 )
 def test_jp(case, expected):
-    message = (f"returned {tl.jp(case)} instead of {expected}")
-    assert tl.jp(case) == expected, message
+    message = (f"returned {jp(case)} instead of {expected}")
+    assert jp(case) == expected, message

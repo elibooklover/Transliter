@@ -32,7 +32,7 @@ $ Python
 
 ```
 > tl.ko("안녕하세요. 날씨가 좋네요!")
-annyeohaseyo. narssiga johneyo!
+'annyeonghaseyo. nalssiga jotneyo!'
 ```
 
 If you want to use the transliteration function several times in a row:
@@ -41,7 +41,7 @@ If you want to use the transliteration function several times in a row:
 > tl.transliter_ko()
 
 > Please enter Korean text: 안녕하세요. 날씨가 좋네요!
-annyeohaseyo. narssiga johneyo!
+annyeonghaseyo. nalssiga jotneyo!
 
 > Please enter Korean text: 우리나라 만세!
 urinara manse!
@@ -56,16 +56,16 @@ The output is saved as `output_ko.txt` in your current directory.
 ```
 > tl.txt_ko("test_ko.txt")
 안녕하세요.
-annyeohaseyo.
+annyeonghaseyo.
 오늘 날씨 좋네요!
-oneur narssi johneyo!
+oneul nalssi jotneyo!
 행복한 하루 되세요.
-haeboghan haru doeseyo.
+haengbokhan haru doeseyo.
 저는 독서가 취미입니다.
-jeoneun dogseoga chwimiibnida.
+jeoneun dokseoga chwimiibnida.
 하루하루 재미있게 살아요.
-haruharu jaemiissge sarayo.
-가족들과 저녁을 먹어요.gajogdeurgwa jeonyeogeur meogeoyo.
+haruharu jaemiitge salayo.
+가족들과 저녁을 먹어요.gajokdeulgwa jeonyeokeul meokeoyo.
 ```
 
 ### 1-3. File Export (txt -> csv)
@@ -75,12 +75,12 @@ The output is saved as `output_ko.csv` in your current directory.
 ```
 > tl.csv_ko("test_ko.txt")
     Original Text                 Transliterated Text
-0          안녕하세요.                       annyeohaseyo.
-1      오늘 날씨 좋네요!               oneur narssi johneyo!
-2     행복한 하루 되세요.             haeboghan haru doeseyo.
-3   저는 독서가 취미입니다.      jeoneun dogseoga chwimiibnida.
-4  하루하루 재미있게 살아요.         haruharu jaemiissge sarayo.
-5   가족들과 저녁을 먹어요.  gajogdeurgwa jeonyeogeur meogeoyo.
+0          안녕하세요.                     annyeonghaseyo.
+1      오늘 날씨 좋네요!               oneul nalssi jotneyo!
+2     행복한 하루 되세요.           haengbokhan haru doeseyo.
+3   저는 독서가 취미입니다.      jeoneun dokseoga chwimiibnida.
+4  하루하루 재미있게 살아요.          haruharu jaemiitge salayo.
+5   가족들과 저녁을 먹어요.  gajokdeulgwa jeonyeokeul meokeoyo.
 ```
 
 ## 2. Japanese

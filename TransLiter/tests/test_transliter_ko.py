@@ -1,5 +1,5 @@
 import pytest
-import TransLiter as tl
+from TransLiter.transliter_ko import *
 
 @pytest.mark.parametrize(
     "case, expected",
@@ -15,21 +15,21 @@ import TransLiter as tl
     ],
 )
 def test_convert(case, expected):
-    message = (f"returned {tl.convert(case)} instead of {expected}")
-    assert tl.convert(case) == expected, message
+    message = (f"returned {convert(case)} instead of {expected}")
+    assert convert(case) == expected, message
 
 @pytest.mark.parametrize(
     "case, expected",
     [
         ("", ""),
-        ("안녕하세요.","annyeohaseyo."),
-        ("오늘 날씨 좋네요!", "oneur narssi johneyo!"),
-        ("행복한 하루 되세요.", "haeboghan haru doeseyo."),
-        ("저는 독서가 취미입니다.", "jeoneun dogseoga chwimiibnida."),
-        ("하루하루 재미있게 살아요.", "haruharu jaemiissge sarayo."),
-        ("가족들과 저녁을 먹어요.", "gajogdeurgwa jeonyeogeur meogeoyo.")
+        ("안녕하세요.","annyeonghaseyo."),
+        ("오늘 날씨 좋네요!", "oneul nalssi jotneyo!"),
+        ("행복한 하루 되세요.", "haengbokhan haru doeseyo."),
+        ("저는 독서가 취미입니다.", "jeoneun dokseoga chwimiibnida."),
+        ("하루하루 재미있게 살아요.", "haruharu jaemiitge salayo."),
+        ("가족들과 저녁을 먹어요.", "gajokdeulgwa jeonyeokeul meokeoyo.")
     ],
 )
 def test_ko(case, expected):
-    message = (f"returned {tl.ko(case)} instead of {expected}")
-    assert tl.ko(case) == expected, message
+    message = (f"returned {ko(case)} instead of {expected}")
+    assert ko(case) == expected, message

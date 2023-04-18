@@ -25,7 +25,7 @@ hiragana_to_english = {
     "じゃ": "ja", "じゅ": "ju", "じょ": "jo",
     "ぢゃ": "ja", "ぢゅ": "ju", "ぢょ": "jo",
     "びゃ": "bya", "びゅ": "byu", "びょ": "byo",
-    "ぴゃ": "pya", "ぴゅ": "pyu", "ぴょ": "pyo"
+    "ぴゃ": "pya", "ぴゅ": "pyu", "ぴょ": "pyo", "っ": "k", "ッ": "t"
 }
 
 katakana_to_english = {
@@ -48,7 +48,7 @@ katakana_to_english = {
         "シャ": "sha", "シュ": "shu", "ショ": "sho",
         "チャ": "cha", "チュ": "chu", "チョ": "cho",
         "ニャ": "nya", "ニュ": "nyu", "ニョ": "nyo",
-        "ヒャ": "hya", "ヒュ": "hyu", "ヒョ": "hyo",
+        "ヒャ": "hya", "ヒュ": "hyu", "ヒョ": "hyo", "フォ": "fo",
         "ミャ": "mya", "ミュ": "myu", "ミョ": "myo",
         "リャ": "rya", "リュ": "ryu", "リョ": "ryo",
         "ギャ": "gya", "ギュ": "gyu", "ギョ": "gyo",

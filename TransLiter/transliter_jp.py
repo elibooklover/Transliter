@@ -19,10 +19,7 @@ def jp(text):
     i = 0
     while i < len(text):
         try:
-            if i < len(text) - 1 and text[i+1] in ['ッ', 'っ']:
-                transliterated_text += hiragana_to_english[text[i]][0]
-                i += 1
-            elif i < len(text) - 1 and text[i+1] in ['ゃ', 'ゅ', 'ょ']:
+            if i < len(text) - 1 and text[i+1] in ['ゃ', 'ゅ', 'ょ']:
                 transliterated_text += hiragana_to_english[text[i]+text[i+1]]
                 i += 1
             else:
