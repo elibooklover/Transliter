@@ -1,4 +1,4 @@
-from cyrillic_list import *
+from TransLiter.cyrillic_list import *
 import pandas as pd
 
 # Russian
