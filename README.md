@@ -6,9 +6,13 @@
 
 </div>
 
-TransLiter transliterates multilingual text into English. | by Hoyeol Kim
+TransLiter transliterates multilingual text into Latin script. | by Hoyeol Kim
 
-Currently, TransLiter supports Korean, Japanese, and Cyrillic (Russian and Serbian). More languages will be added to TransLiter in the future.
+Currently, TransLiter supports Korean, Japanese, and Cyrillic (Russian, Ukrainian, Bulgarian, Macedonian, Montenegrin, and Serbian). More languages will be added to TransLiter in the future.
+
+There are several functions in TransLiter, such as `tl.ko`, `tl.transliter_ko`, `tl.txt_ko`, and `tl.csv_ko`, in addition to spacing functions (`tl.spacing` and `tl.spacing_file`). To transliaterate from a language other than Korean, simply replace the language code `ko` with your desired language code.
+
+Language codes are as follows: `ko` (Korean), `jp` (Japanese), `ru` (Russian), `ua` (Ukrainian), `bg` (Bulgarian), `mk` (Macedonian), `me` (Montenegrin), and `sr` (Serbian).
 
 ---
 
