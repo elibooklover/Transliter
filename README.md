@@ -8,7 +8,7 @@
 
 TransLiter transliterates multilingual text into English. | by Hoyeol Kim
 
-Currently, TransLiter supports Korean and Japanese. More languages will be added to TransLiter in the future.
+Currently, TransLiter supports Korean, Japanese, and Cyrillic (Russian and Serbian). More languages will be added to TransLiter in the future.
 
 ---
 
@@ -156,4 +156,95 @@ If you want to remove all spacing from a file, use `spacing_file("filename")`. T
 
 ```
 > tl.spacing_file("test.txt")
+```
+
+## 4. Cyrillic
+
+TransLiter currently supports Russian and Serbian between languages written in Cyrillic. More languages will be added soon.
+
+### 4-1. Simple functions
+
+```
+# Russian
+> tl.ru("Привет")
+'Privet'
+
+# Serbian
+> tl.sr("Здраво")
+'Zdravo'
+```
+
+If you want to use the transliteration function several times in a row:
+
+```
+# Russian
+> tl.transliter_ru()
+
+> Please enter Russian text: Привет.
+Privet.
+
+> Please enter Russian text: Как дела?
+Kak dela?
+
+# Serbian
+> tl.transliter_sr()
+
+> Please enter Serbian text: Жао ми је
+Žao mi je
+
+> Please enter Serbian text: Добро јутро
+Dobro jutro
+```
+
+To exit TransLiter, please press enter without any text.
+
+### 4-2. File Export (txt -> txt)
+
+The output is saved as `output_ru.txt` (Russian) / `output_sr.txt` (Serbian) in your current directory.
+
+```
+# Russian
+> tl.txt_ru("test_ru.txt")
+Доброе утро.
+Dobroe utro.
+Меня зовут Мандли.
+Menya zovut Mandli.
+Рад познакомиться с тобой.
+Rad poznakomit'sya s toboj.
+Как дела?Kak dela?
+
+# Serbian
+> tl.txt_sr("test_sr.txt")
+Добро јутро
+Dobro jutro
+Драго ми је
+Drago mi je
+Пријатан дан желим
+Prijatan dan želim
+Не разумем
+Ne razumem
+Извините!Izvinite!
+```
+
+### 4-3. File Export (txt -> csv)
+
+The output is saved as `output_ru.csv` (Russian) / `output_sr.csv` (Serbian) in your current directory.
+
+```
+# Russian
+> tl.csv_ru("test_ru.txt")
+                Original Text          Transliterated Text
+0                Доброе утро.                 Dobroe utro.
+1          Меня зовут Мандли.          Menya zovut Mandli.
+2  Рад познакомиться с тобой.  Rad poznakomit'sya s toboj.
+3                   Как дела?                    Kak dela?
+
+# Serbian
+> tl.csv_sr("test_sr.txt")
+        Original Text Transliterated Text
+0         Добро јутро         Dobro jutro
+1         Драго ми је         Drago mi je
+2  Пријатан дан желим  Prijatan dan želim
+3          Не разумем          Ne razumem
+4           Извините!           Izvinite!
 ```

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(name='TransLiter',
     python_requires='>=3.6',
-    version='0.2.5',
+    version='0.3.0',
     url='https://github.com/elibooklover/TransLiter',
     license='MIT',
     author='Hoyeol Kim',
