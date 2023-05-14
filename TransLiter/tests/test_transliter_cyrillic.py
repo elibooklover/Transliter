@@ -107,3 +107,21 @@ def test_mk(case, expected):
 def test_sr(case, expected):
     message = (f"returned {sr(case)} instead of {expected}")
     assert sr(case) == expected, message
+
+# Tajiki
+@pytest.mark.parametrize(
+    "case, expected",
+    [
+        ("", ""),
+        ("Салом", "Salom"),
+        ("Ташаккур", "Tašakkur"),
+        ("Бародарӣ кунед", "Barodarī kuned"),
+        ("Мутмаинам", "Mutmainam"),
+        ("Шумо чӣ хеле кӯшед?", "Šumo čī hele kūšed?"),
+        ("Мумкин аст ки шумо кумакам кунед?", "Mumkin ast ki šumo kumakam kuned?"),
+        ("Тоалет дар куҷост?", "Toalet dar kuçost?")
+    ],
+)
+def test_tj(case, expected):
+    message = (f"returned {tj(case)} instead of {expected}")
+    assert tj(case) == expected, message
