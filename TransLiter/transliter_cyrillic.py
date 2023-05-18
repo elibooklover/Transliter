@@ -213,6 +213,60 @@ def csv_mk(file):
     print(data)
     f.close()
 
+# Mongolian
+def mn(text):
+    transliterated_text = ""
+    for letter in text:
+        try: 
+            if letter in mongolian_list:
+                transliterated_text += mongolian_list[letter]
+            else:
+                transliterated_text += letter
+        except KeyError:
+            pass
+    return transliterated_text
+
+def transliter_mn():
+    while True:
+        input_text = input("Please enter Mongolian text: ")
+        print(me(input_text))
+        if input_text == "": 
+            break
+
+def txt_mn(file):
+    f = open(file, 'r')
+    f2 = open("output_mn.txt", 'w')
+    result = ""
+    while True:
+        line = f.readline()
+        result += line + mn(line)
+        if not line: 
+            break
+    print(result)
+    f2.write(result)
+    f.close()
+    f2.close()
+
+def csv_mn(file):
+    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
+    f = open(file, 'r')
+    lines = f.readlines()
+    
+    index_list = list(range(len(lines)))
+    sentence_list = []
+    transliter_list = []
+    for sentence in lines:
+        st = sentence.strip()
+        tr = mn(st)
+        sentence_list.append(st)
+        transliter_list.append(tr)
+
+    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
+    data.to_csv("output_mn.csv", encoding="utf-8-sig")
+    print(data)
+    f.close()
+
+
 # Montenegrin
 def me(text):
     transliterated_text = ""

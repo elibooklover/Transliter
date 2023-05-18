@@ -1,5 +1,5 @@
 import pytest
-from TransLiter.transliter_cyrillic import *
+from transliter.transliter_cyrillic import *
 
 # Russian
 @pytest.mark.parametrize(
@@ -54,6 +54,24 @@ def test_ua(case, expected):
 def test_bg(case, expected):
     message = (f"returned {bg(case)} instead of {expected}")
     assert bg(case) == expected, message
+
+# Mongolian
+@pytest.mark.parametrize(
+    "case, expected",
+    [
+        ("", ""),
+        ("Сайн уу", "Sain uu"),
+        ("Өглөөний Мэнд", "Öglöönii Mend"),
+        ("Како се зовете?", "Kako sye zovyetye?"),
+        ("би сайн, баярлалаа", "bi sain, bayarlalaa"),
+        ("Би ойлгохгүй байна", "Bi oilgokhgüi baina"),
+        ("Уучлаарай", "Uuchlaarai"),
+        ("Баярлалаа", "Bayarlalaa")
+    ],
+)
+def test_mn(case, expected):
+    message = (f"returned {mn(case)} instead of {expected}")
+    assert mn(case) == expected, message
 
 # Montenegrin
 @pytest.mark.parametrize(

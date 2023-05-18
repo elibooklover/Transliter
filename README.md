@@ -1,4 +1,4 @@
-# TransLiter
+# Transliter
 
 <div align=right>
 
@@ -6,13 +6,13 @@
 
 </div>
 
-#### TransLiter transliterates multilingual text into Latin script | by Hoyeol Kim
+#### Transliter transliterates multilingual text into Latin script | by Hoyeol Kim
 
-Currently, TransLiter supports Korean, Japanese, and Cyrillic (Russian, Ukrainian, Bulgarian, Macedonian, Montenegrin, Serbian, and Tajiki). More languages will be added to TransLiter in the future.
+Currently, Transliter supports Korean, Japanese, Russian, Ukrainian, Bulgarian, Macedonian, Mongolian, Montenegrin, Serbian, and Tajiki. More languages will be added to Transliter in the future.
 
-There are several functions in TransLiter, such as `tl.ko`, `tl.transliter_ko`, `tl.txt_ko`, and `tl.csv_ko`, in addition to spacing functions (`tl.spacing` and `tl.spacing_file`). To transliaterate from a language other than Korean, simply replace the language code `ko` with your desired language code.
+There are several functions in Transliter, such as `tl.ko`, `tl.transliter_ko`, `tl.txt_ko`, and `tl.csv_ko`, in addition to spacing functions (`tl.spacing` and `tl.spacing_file`). To transliaterate from a language other than Korean, simply replace the language code `ko` with your desired language code.
 
-Language codes are as follows: `ko` (Korean), `jp` (Japanese), `ru` (Russian), `ua` (Ukrainian), `bg` (Bulgarian), `mk` (Macedonian), `me` (Montenegrin),  `sr` (Serbian), and `tj` (Tajiki).
+Language codes are as follows: `ko` (Korean), `jp` (Japanese), `ru` (Russian), `ua` (Ukrainian), `bg` (Bulgarian), `mk` (Macedonian), `mn` (Mongolian), `me` (Montenegrin),  `sr` (Serbian), and `tj` (Tajiki).
 
 ---
 
@@ -22,7 +22,7 @@ Language codes are as follows: `ko` (Korean), `jp` (Japanese), `ru` (Russian), `
 $ pip install transliter
 ```
 
-## Load TransLiter in Python
+## Load Transliter in Python
 
 ```
 $ Python
@@ -51,7 +51,7 @@ annyeonghaseyo. nalssiga jotneyo!
 urinara manse!
 ```
 
-To exit TransLiter, please press enter without any text.
+To exit Transliter, please press enter without any text.
 
 ### 1-2. File Export (txt -> txt)
 
@@ -111,7 +111,7 @@ tenkigaiidesune。
 mainichiundouwoshimasu。
 ```
 
-To exit TransLiter, please press enter without any text.
+To exit Transliter, please press enter without any text.
 
 ### 2-2. File Export (txt -> txt)
 
@@ -164,7 +164,7 @@ If you want to remove all spacing from a file, use `spacing_file("filename")`. T
 
 ## 4. Cyrillic
 
-TransLiter currently supports Russian and Serbian between languages written in Cyrillic. More languages will be added soon.
+Transliter currently supports Russian and Serbian between languages written in Cyrillic. More languages will be added soon.
 
 ### 4-1. Simple functions
 
@@ -200,7 +200,7 @@ Kak dela?
 Dobro jutro
 ```
 
-To exit TransLiter, please press enter without any text.
+To exit Transliter, please press enter without any text.
 
 ### 4-2. File Export (txt -> txt)
 
