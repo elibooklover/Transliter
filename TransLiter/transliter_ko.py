@@ -1,4 +1,4 @@
-from TransLiter.ko_jamo import *
+from transliter.ko_jamo import *
 import re
 import pandas as pd
 

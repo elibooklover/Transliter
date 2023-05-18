@@ -1,4 +1,4 @@
-from TransLiter.jp_list import *
+from transliter.jp_list import *
 import pykakasi
 import pandas as pd
 

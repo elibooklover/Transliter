@@ -19,7 +19,7 @@ Language codes are as follows: `ko` (Korean), `jp` (Japanese), `ru` (Russian), `
 ## Install
 
 ```
-$ pip install TransLiter
+$ pip install transliter
 ```
 
 ## Load TransLiter in Python
@@ -27,7 +27,7 @@ $ pip install TransLiter
 ```
 $ Python
 
-> import TransLiter as tl
+> import transliter as tl
 ```
 
 ## 1. Korean

@@ -3,15 +3,15 @@ from setuptools import setup
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
-setup(name='TransLiter',
+setup(name='transliter',
     python_requires='>=3.6',
-    version='0.3.3',
+    version='0.3.4',
     url='https://github.com/elibooklover/TransLiter',
     license='MIT',
     author='Hoyeol Kim',
     author_email='elibooklover@gmail.com',
     description='TransLiter transliterates multilingual text into Latin script.',
-    packages=['TransLiter', ],
+    packages=['transliter', ],
     long_description=long_description,
     long_description_content_type="text/markdown",
     zip_safe=False,
