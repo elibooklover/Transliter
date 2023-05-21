@@ -1,4 +1,4 @@
-hiragana_to_english = {
+HIRAGANA_TO_ENGLISH = {
     "あ": "a", "い": "i", "う": "u", "え": "e", "お": "o",
     "か": "ka", "き": "ki", "く": "ku", "け": "ke", "こ": "ko",
     "さ": "sa", "し": "shi", "す": "su", "せ": "se", "そ": "so",
@@ -28,7 +28,7 @@ hiragana_to_english = {
     "ぴゃ": "pya", "ぴゅ": "pyu", "ぴょ": "pyo", "っ": "k", "ッ": "t"
 }
 
-katakana_to_english = {
+KATAKANA_TO_ENGLISH = {
         "ア": "a", "イ": "i", "ウ": "u", "エ": "e", "オ": "o",
         "カ": "ka", "キ": "ki", "ク": "ku", "ケ": "ke", "コ": "ko",
         "サ": "sa", "シ": "shi", "ス": "su", "セ": "se", "ソ": "so",

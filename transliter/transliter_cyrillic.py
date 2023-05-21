@@ -6,8 +6,8 @@ def ru(text):
     transliterated_text = ""
     for letter in text:
         try: 
-            if letter in russian_list:
-                transliterated_text += russian_list[letter]
+            if letter in RUSSIAN_LIST:
+                transliterated_text += RUSSIAN_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:
@@ -58,9 +58,9 @@ def csv_ru(file):
 def ua(text):
     transliterated_text = ""
     for letter in text:
-        try: 
-            if letter in ukrainian_list:
-                transliterated_text += ukrainian_list[letter]
+        try:
+            if letter in UKRAINIAN_LIST:
+                transliterated_text += UKRAINIAN_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:
@@ -112,8 +112,8 @@ def bg(text):
     transliterated_text = ""
     for letter in text:
         try: 
-            if letter in bulgarian_list:
-                transliterated_text += bulgarian_list[letter]
+            if letter in BULGARIAN_LIST:
+                transliterated_text += BULGARIAN_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:
@@ -165,8 +165,8 @@ def mk(text):
     transliterated_text = ""
     for letter in text:
         try: 
-            if letter in macedonian_list:
-                transliterated_text += macedonian_list[letter]
+            if letter in MACEDONIAN_LIST:
+                transliterated_text += MACEDONIAN_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:
@@ -218,8 +218,8 @@ def mn(text):
     transliterated_text = ""
     for letter in text:
         try: 
-            if letter in mongolian_list:
-                transliterated_text += mongolian_list[letter]
+            if letter in MONGOLIAN_LIST:
+                transliterated_text += MONGOLIAN_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:
@@ -272,8 +272,8 @@ def me(text):
     transliterated_text = ""
     for letter in text:
         try: 
-            if letter in montenegrin_list:
-                transliterated_text += montenegrin_list[letter]
+            if letter in MONTENEGRIN_LIST:
+                transliterated_text += MONTENEGRIN_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:
@@ -325,8 +325,8 @@ def sr(text):
     transliterated_text = ""
     for letter in text:
         try: 
-            if letter in serbian_list:
-                transliterated_text += serbian_list[letter]
+            if letter in SERBIAN_LIST:
+                transliterated_text += SERBIAN_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:
@@ -378,8 +378,8 @@ def tj(text):
     transliterated_text = ""
     for letter in text:
         try: 
-            if letter in tajiki_list:
-                transliterated_text += tajiki_list[letter]
+            if letter in TAJIKI_LIST:
+                transliterated_text += TAJIKI_LIST[letter]
             else:
                 transliterated_text += letter
         except KeyError:

@@ -5,9 +5,9 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(name='transliter',
     python_requires='>=3.6',
-    version='0.3.5',
-    url='https://github.com/elibooklover/TransLiter',
-    license='MIT',
+    version='0.3.6',
+    url='https://github.com/elibooklover/Transliter',
+    license='GPL-2.0',
     author='Hoyeol Kim',
     author_email='elibooklover@gmail.com',
     description='TransLiter transliterates multilingual text into Latin script.',

@@ -14,16 +14,16 @@ def kanji_to_hiragana(text):
 
 def jp(text):
     text = kanji_to_hiragana(text)
-    hiragana_to_english.update(katakana_to_english)
+    HIRAGANA_TO_ENGLISH.update(KATAKANA_TO_ENGLISH)
     transliterated_text = ""
     i = 0
     while i < len(text):
         try:
             if i < len(text) - 1 and text[i+1] in ['ゃ', 'ゅ', 'ょ']:
-                transliterated_text += hiragana_to_english[text[i]+text[i+1]]
+                transliterated_text += HIRAGANA_TO_ENGLISH[text[i]+text[i+1]]
                 i += 1
             else:
-                transliterated_text += hiragana_to_english.get(text[i], text[i])
+                transliterated_text += HIRAGANA_TO_ENGLISH.get(text[i], text[i])
         except KeyError:
             pass
         i += 1
