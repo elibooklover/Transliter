@@ -1,6 +1,7 @@
 from transliter.jp_list import *
 import pykakasi
 import pandas as pd
+import os
 
 def kanji_to_hiragana(text):
     kks = pykakasi.kakasi()
@@ -38,7 +39,8 @@ def transliter_jp():
 
 def txt_jp(file):
     f = open(file, 'r')
-    f2 = open("output_jp.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -53,6 +55,7 @@ def txt_jp(file):
 def csv_jp(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -65,6 +68,6 @@ def csv_jp(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_jp.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()

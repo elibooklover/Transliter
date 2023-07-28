@@ -1,6 +1,7 @@
 from transliter.ko_jamo import *
 import re
 import pandas as pd
+import os
 
 def convert(Ko_words):
     split_word_list = list(Ko_words)
@@ -57,7 +58,8 @@ def transliter_ko():
 
 def txt_ko(file):
     f = open(file, 'r')
-    f2 = open("output_ko.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -72,6 +74,7 @@ def txt_ko(file):
 def csv_ko(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -84,6 +87,6 @@ def csv_ko(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_ko.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()

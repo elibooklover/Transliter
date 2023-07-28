@@ -55,7 +55,7 @@ To exit Transliter, please press enter without any text.
 
 ### 1-2. File Export (txt -> txt)
 
-The output is saved as `output_ko.txt` in your current directory.
+The output is saved as `filename_output.txt` in your current directory.
 
 ```
 > tl.txt_ko("test_ko.txt")
@@ -74,7 +74,7 @@ haruharu jaemiitge salayo.
 
 ### 1-3. File Export (txt -> csv)
 
-The output is saved as `output_ko.csv` in your current directory.
+The output is saved as `filename_output.csv` in your current directory.
 
 ```
 > tl.csv_ko("test_ko.txt")
@@ -115,7 +115,7 @@ To exit Transliter, please press enter without any text.
 
 ### 2-2. File Export (txt -> txt)
 
-The output is saved as `output_jp.txt` in your current directory.
+The output is saved as `filename_output.txt` in your current directory.
 
 ```
 > tl.txt_jp("test_jp.txt")
@@ -134,7 +134,7 @@ kiwotsuketekudasai。
 
 ### 2-3. File Export (txt -> csv)
 
-The output is saved as `output_jp.csv` in your current directory.
+The output is saved as `filename_output.csv` in your current directory.
 
 ```
 > tl.csv_jp("test_jp.txt")
@@ -156,7 +156,7 @@ Some languages such as Japanese don't have spacing between words. If there is sp
 良いニュースです。
 ```
 
-If you want to remove all spacing from a file, use `spacing_file("filename")`. The result is saved as `spacing_removed.txt`.
+If you want to remove all spacing from a file, use `spacing_file("filename")`. The result is saved as `filename_rmspace.txt`.
 
 ```
 > tl.spacing_file("test.txt")
@@ -204,7 +204,7 @@ To exit Transliter, please press enter without any text.
 
 ### 4-2. File Export (txt -> txt)
 
-The output is saved as `output_ru.txt` (Russian) / `output_sr.txt` (Serbian) in your current directory.
+The output is saved as `filename_output.txt` in your current directory.
 
 ```
 # Russian
@@ -232,7 +232,7 @@ Ne razumem
 
 ### 4-3. File Export (txt -> csv)
 
-The output is saved as `output_ru.csv` (Russian) / `output_sr.csv` (Serbian) in your current directory.
+The output is saved as `filename_output.csv` in your current directory.
 
 ```
 # Russian

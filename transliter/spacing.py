@@ -1,6 +1,9 @@
+import os
+
 def spacing_file(file):
     f = open(file, 'r')
-    f2 = open("spacing_removed.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_rmspace.txt", 'w')
     result = ""
     while True:
         line = f.readline()

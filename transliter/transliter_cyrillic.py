@@ -1,5 +1,6 @@
 from transliter.cyrillic_list import *
 import pandas as pd
+import os
 
 # Russian
 def ru(text):
@@ -23,7 +24,8 @@ def transliter_ru():
 
 def txt_ru(file):
     f = open(file, 'r')
-    f2 = open("output_ru.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -38,6 +40,7 @@ def txt_ru(file):
 def csv_ru(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -50,7 +53,7 @@ def csv_ru(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_ru.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
 
@@ -76,7 +79,8 @@ def transliter_ua():
 
 def txt_ua(file):
     f = open(file, 'r')
-    f2 = open("output_ua.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -91,6 +95,7 @@ def txt_ua(file):
 def csv_ua(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -103,7 +108,7 @@ def csv_ua(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_ua.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
 
@@ -129,7 +134,8 @@ def transliter_bg():
 
 def txt_bg(file):
     f = open(file, 'r')
-    f2 = open("output_bg.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -144,6 +150,7 @@ def txt_bg(file):
 def csv_bg(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -156,7 +163,7 @@ def csv_bg(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_bg.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
 
@@ -182,7 +189,8 @@ def transliter_mk():
 
 def txt_mk(file):
     f = open(file, 'r')
-    f2 = open("output_mk.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -197,6 +205,7 @@ def txt_mk(file):
 def csv_mk(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -209,7 +218,7 @@ def csv_mk(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_mk.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
 
@@ -235,7 +244,8 @@ def transliter_mn():
 
 def txt_mn(file):
     f = open(file, 'r')
-    f2 = open("output_mn.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -250,6 +260,7 @@ def txt_mn(file):
 def csv_mn(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -262,7 +273,7 @@ def csv_mn(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_mn.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
 
@@ -289,7 +300,8 @@ def transliter_me():
 
 def txt_me(file):
     f = open(file, 'r')
-    f2 = open("output_me.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -304,6 +316,7 @@ def txt_me(file):
 def csv_me(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -316,7 +329,7 @@ def csv_me(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_me.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
 
@@ -342,7 +355,8 @@ def transliter_sr():
 
 def txt_sr(file):
     f = open(file, 'r')
-    f2 = open("output_sr.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -357,6 +371,7 @@ def txt_sr(file):
 def csv_sr(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -369,7 +384,7 @@ def csv_sr(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_sr.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
 
@@ -395,7 +410,8 @@ def transliter_tj():
 
 def txt_tj(file):
     f = open(file, 'r')
-    f2 = open("output_tj.txt", 'w')
+    new_file = os.path.splitext(file)[0]
+    f2 = open(f"{new_file}_output.txt", 'w')
     result = ""
     while True:
         line = f.readline()
@@ -410,6 +426,7 @@ def txt_tj(file):
 def csv_tj(file):
     data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
     f = open(file, 'r')
+    new_file = os.path.splitext(file)[0]
     lines = f.readlines()
     
     index_list = list(range(len(lines)))
@@ -422,6 +439,6 @@ def csv_tj(file):
         transliter_list.append(tr)
 
     data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv("output_tj.csv", encoding="utf-8-sig")
+    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
     print(data)
     f.close()
