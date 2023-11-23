@@ -2,443 +2,188 @@ from transliter.cyrillic_list import *
 import pandas as pd
 import os
 
-# Russian
+class TransliterCyrillic:
+    def __init__(self, language_list):
+        self.language_list = language_list
+
+    def transliter1(self, text):
+        transliterated_text = ""
+        for letter in text:
+            try:
+                if letter in self.language_list:
+                    transliterated_text += self.language_list[letter]
+                else:
+                    transliterated_text += letter
+            except KeyError:
+                pass
+        return transliterated_text
+    
+    def transliter2(self, transliterator, prompt):
+        while True:
+            input_text = input(prompt)
+            if input_text == "":
+                break
+            print(transliterator(input_text))
+
+    def export_txt(self, transliterator, file):
+        f = open(file, 'r')
+        new_file = os.path.splitext(file)[0]
+        f2 = open(f"{new_file}_output.txt", 'w')
+        result = ""
+        while True:
+            line = f.readline()
+            result += line + transliterator(line)
+            if not line: 
+                break
+        print(result)
+        f2.write(result)
+        f.close()
+        f2.close()
+    
+    def export_csv(self, transliterator, file):
+        data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
+        f = open(file, 'r')
+        new_file = os.path.splitext(file)[0]
+        lines = f.readlines()
+        
+        index_list = list(range(len(lines)))
+        sentence_list = []
+        transliter_list = []
+        for sentence in lines:
+            st = sentence.strip()
+            tr = transliterator(st)
+            sentence_list.append(st)
+            transliter_list.append(tr)
+
+        data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
+        data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
+        print(data)
+        f.close()
+
 def ru(text):
-    transliterated_text = ""
-    for letter in text:
-        try: 
-            if letter in RUSSIAN_LIST:
-                transliterated_text += RUSSIAN_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliterator = TransliterCyrillic(RUSSIAN_LIST)
+    return transliterator.transliter1(text)
+
+def ua(text):
+    transliter = TransliterCyrillic(UKRAINIAN_LIST)
+    return transliter.transliter1(text)
+
+def bg(text):
+    transliter = TransliterCyrillic(BULGARIAN_LIST)
+    return transliter.transliter1(text)
+
+def mk(text):
+    transliter = TransliterCyrillic(MACEDONIAN_LIST)
+    return transliter.transliter1(text)
+
+def mn(text):
+    transliter = TransliterCyrillic(MONGOLIAN_LIST)
+    return transliter.transliter1(text)
+
+def me(text):
+    transliter = TransliterCyrillic(MONTENEGRIN_LIST)
+    return transliter.transliter1(text)
+
+def sr(text):
+    transliter = TransliterCyrillic(SERBIAN_LIST)
+    return transliter.transliter1(text)
+
+def tj(text):
+    transliter = TransliterCyrillic(TAJIKI_LIST)
+    return transliter.transliter1(text)
 
 def transliter_ru():
-    while True:
-        input_text = input("Please enter Russian text: ")
-        print(ru(input_text))
-        if input_text == "": 
-            break
-
-def txt_ru(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + ru(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
-
-def csv_ru(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = ru(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
-
-# Ukrainian
-def ua(text):
-    transliterated_text = ""
-    for letter in text:
-        try:
-            if letter in UKRAINIAN_LIST:
-                transliterated_text += UKRAINIAN_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliter = TransliterCyrillic(RUSSIAN_LIST)
+    return transliter.transliter2(ru, "Please enter Russian text: ")
 
 def transliter_ua():
-    while True:
-        input_text = input("Please enter Ukrainian text: ")
-        print(ua(input_text))
-        if input_text == "": 
-            break
-
-def txt_ua(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + ua(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
-
-def csv_ua(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = ua(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
-
-# Bulgarian
-def bg(text):
-    transliterated_text = ""
-    for letter in text:
-        try: 
-            if letter in BULGARIAN_LIST:
-                transliterated_text += BULGARIAN_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliter = TransliterCyrillic(UKRAINIAN_LIST)
+    return transliter.transliter2(ua, "Please enter Ukrainian text: ")
 
 def transliter_bg():
-    while True:
-        input_text = input("Please enter Bulgarian text: ")
-        print(bg(input_text))
-        if input_text == "": 
-            break
-
-def txt_bg(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + bg(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
-
-def csv_bg(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = bg(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
-
-# Macedonian
-def mk(text):
-    transliterated_text = ""
-    for letter in text:
-        try: 
-            if letter in MACEDONIAN_LIST:
-                transliterated_text += MACEDONIAN_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliter = TransliterCyrillic(BULGARIAN_LIST)
+    return transliter.transliter2(bg, "Please enter Bulgarian text: ")
 
 def transliter_mk():
-    while True:
-        input_text = input("Please enter Macedonian text: ")
-        print(mk(input_text))
-        if input_text == "": 
-            break
-
-def txt_mk(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + mk(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
-
-def csv_mk(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = mk(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
-
-# Mongolian
-def mn(text):
-    transliterated_text = ""
-    for letter in text:
-        try: 
-            if letter in MONGOLIAN_LIST:
-                transliterated_text += MONGOLIAN_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliter = TransliterCyrillic(MACEDONIAN_LIST)
+    return transliter.transliter2(mk, "Please enter Macedonian text: ")
 
 def transliter_mn():
-    while True:
-        input_text = input("Please enter Mongolian text: ")
-        print(me(input_text))
-        if input_text == "": 
-            break
-
-def txt_mn(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + mn(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
-
-def csv_mn(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = mn(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
-
-
-# Montenegrin
-def me(text):
-    transliterated_text = ""
-    for letter in text:
-        try: 
-            if letter in MONTENEGRIN_LIST:
-                transliterated_text += MONTENEGRIN_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliter = TransliterCyrillic(MONGOLIAN_LIST)
+    return transliter.transliter2(mk, "Please enter Mongolian text: ")
 
 def transliter_me():
-    while True:
-        input_text = input("Please enter Montenegrin text: ")
-        print(me(input_text))
-        if input_text == "": 
-            break
-
-def txt_me(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + me(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
-
-def csv_me(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = me(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
-
-# Serbian
-def sr(text):
-    transliterated_text = ""
-    for letter in text:
-        try: 
-            if letter in SERBIAN_LIST:
-                transliterated_text += SERBIAN_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliter = TransliterCyrillic(MONTENEGRIN_LIST)
+    return transliter.transliter2(mk, "Please enter Montenegrin text: ")
 
 def transliter_sr():
-    while True:
-        input_text = input("Please enter Serbian text: ")
-        print(sr(input_text))
-        if input_text == "": 
-            break
-
-def txt_sr(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + sr(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
-
-def csv_sr(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = sr(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
-
-# Tajiki
-def tj(text):
-    transliterated_text = ""
-    for letter in text:
-        try: 
-            if letter in TAJIKI_LIST:
-                transliterated_text += TAJIKI_LIST[letter]
-            else:
-                transliterated_text += letter
-        except KeyError:
-            pass
-    return transliterated_text
+    transliter = TransliterCyrillic(SERBIAN_LIST)
+    return transliter.transliter2(mk, "Please enter Serbian text: ")
 
 def transliter_tj():
-    while True:
-        input_text = input("Please enter Tajiki text: ")
-        print(tj(input_text))
-        if input_text == "": 
-            break
+    transliter = TransliterCyrillic(TAJIKI_LIST)
+    return transliter.transliter2(mk, "Please enter Tajiki text: ")
+
+def txt_ru(file):
+    transliter = TransliterCyrillic(RUSSIAN_LIST)
+    return transliter.export_txt(ru, file)
+
+def txt_ua(file):
+    transliter = TransliterCyrillic(UKRAINIAN_LIST)
+    return transliter.export_txt(ua, file)
+
+def txt_bg(file):
+    transliter = TransliterCyrillic(BULGARIAN_LIST)
+    return transliter.export_txt(bg, file)
+
+def txt_mk(file):
+    transliter = TransliterCyrillic(MACEDONIAN_LIST)
+    return transliter.export_txt(mk, file)
+
+def txt_mn(file):
+    transliter = TransliterCyrillic(MONGOLIAN_LIST)
+    return transliter.export_txt(mn, file)
+
+def txt_me(file):
+    transliter = TransliterCyrillic(MONTENEGRIN_LIST)
+    return transliter.export_txt(me, file)
+
+def txt_sr(file):
+    transliter = TransliterCyrillic(SERBIAN_LIST)
+    return transliter.export_txt(sr, file)
 
 def txt_tj(file):
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    f2 = open(f"{new_file}_output.txt", 'w')
-    result = ""
-    while True:
-        line = f.readline()
-        result += line + tj(line)
-        if not line: 
-            break
-    print(result)
-    f2.write(result)
-    f.close()
-    f2.close()
+    transliter = TransliterCyrillic(TAJIKI_LIST)
+    return transliter.export_txt(tj, file)
+
+def csv_ru(file):
+    transliter = TransliterCyrillic(RUSSIAN_LIST)
+    return transliter.export_csv(ru, file)
+
+def csv_ua(file):
+    transliter = TransliterCyrillic(UKRAINIAN_LIST)
+    return transliter.export_csv(ua, file)
+
+def csv_bg(file):
+    transliter = TransliterCyrillic(BULGARIAN_LIST)
+    return transliter.export_csv(bg, file)
+
+def csv_mk(file):
+    transliter = TransliterCyrillic(MACEDONIAN_LIST)
+    return transliter.export_csv(mk, file)
+
+def csv_mn(file):
+    transliter = TransliterCyrillic(MONGOLIAN_LIST)
+    return transliter.export_csv(mn, file)
+
+def csv_me(file):
+    transliter = TransliterCyrillic(MONTENEGRIN_LIST)
+    return transliter.export_csv(me, file)
+
+def csv_sr(file):
+    transliter = TransliterCyrillic(SERBIAN_LIST)
+    return transliter.export_csv(sr, file)
 
 def csv_tj(file):
-    data = pd.DataFrame(columns=['Original Text', 'Transliterated Text'])
-    f = open(file, 'r')
-    new_file = os.path.splitext(file)[0]
-    lines = f.readlines()
-    
-    index_list = list(range(len(lines)))
-    sentence_list = []
-    transliter_list = []
-    for sentence in lines:
-        st = sentence.strip()
-        tr = tj(st)
-        sentence_list.append(st)
-        transliter_list.append(tr)
-
-    data = pd.DataFrame({'Original Text': sentence_list, 'Transliterated Text': transliter_list}, index=index_list)
-    data.to_csv(f"{new_file}_output.csv", encoding="utf-8-sig")
-    print(data)
-    f.close()
+    transliter = TransliterCyrillic(TAJIKI_LIST)
+    return transliter.export_csv(tj, file)
