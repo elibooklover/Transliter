@@ -1,13 +1,16 @@
 # Transliter
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="https://www.buymeacoffee.com/hoyeolkim" target="_blank">
-        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;">
-    </a>
-    <div style="display: flex; flex-direction: row; margin-left: auto;">
-        <img class="img" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Felibooklover%2FTransLiter&count_bg=%235F3DC8&title_bg=%23555555&icon=python.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
-    </div>
-</div>
+<p align="right">
+  <a href="https://www.buymeacoffee.com/hoyeolkim" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important; width: 217px !important;">
+  </a>
+</p>
+
+<p align="right">
+  <a href="https://hits.seeyoufarm.com" target="_blank">
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Felibooklover%2FTransLiter&count_bg=%235F3DC8&title_bg=%23555555&icon=python.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false" />
+  </a>
+</p>
 
 #### Transliter transliterates multilingual text into Latin script | by Hoyeol Kim
 
