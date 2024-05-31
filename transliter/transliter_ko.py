@@ -7,7 +7,7 @@ def convert(Ko_words):
     split_word_list = list(Ko_words)
     jamo_result = []
     for keyword in split_word_list:
-        if re.match('.*[가-힣]+.*', keyword) is not None:
+        if re.match('.*[가-힣]+.*', keyword):
             char_code = ord(keyword) - BASE_CODE
             char1 = int(char_code / CHOSUNG)
             char2 = int((char_code - (CHOSUNG * char1)) / JUNGSUNG)
